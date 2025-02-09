@@ -49,61 +49,60 @@ function App() {
             <CallToAction />
           </section>
 
-          {/* Main Content Container */}
-          <div className="relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          {/* Content Sections */}
+          <div className="relative px-4 py-0 sm:px-6 lg:px-8">
             {/* About Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <About />
             </section>
 
             {/* Features Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <Features />
             </section>
 
             {/* Process Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <Process />
             </section>
 
             {/* Video Section */}
-            <section className="relative py-12 sm:py-16">
-              <VideoSection videoSrc="/ff.mp4" />
+            <section className="relative mb-2">
+              <VideoSection videoSrc="/fire.mp4" />
             </section>
 
             {/* Projects Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <Projects />
             </section>
 
             {/* Pricing Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <Pricing />
             </section>
 
             {/* Testimonials Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <Testimonials />
             </section>
 
             {/* Q&A Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <QandA />
             </section>
-
-            {/* Blog Section */}
-            <section className="relative py-12 sm:py-16">
+          {/* Blog Section */}
+          <section className="relative mb-2">
               <Blog />
             </section>
 
             {/* Contact Section */}
-            <section className="relative py-12 sm:py-16">
+            <section className="relative mb-2">
               <ContactForm />
             </section>
           </div>
 
           {/* Footer */}
-          <footer className="relative mt-16">
+          <footer className="relative mt-24 border-t border-white/10 bg-black/40 backdrop-blur-lg">
             <Footer />
           </footer>
         </main>

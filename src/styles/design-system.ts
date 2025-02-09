@@ -32,13 +32,8 @@ export const textStyles = {
 
 // Common card styles
 export const cardStyles = {
-  base: `group relative bg-white/10 backdrop-blur-xl rounded-2xl overflow-hidden
-    border border-white/20 shadow-lg
-    transform transition-all duration-500 hover:scale-[1.02]
-    hover:bg-white/20`,
-  header: "text-xl font-bold text-white mb-3",
-  content: "text-gray-300",
-  tag: "px-3 py-1 text-sm bg-red-400/20 text-red-300 rounded-full",
+  glass: `relative overflow-hidden rounded-2xl border border-white/10 
+    backdrop-blur-lg bg-white/5 p-6 shadow-xl`,
 };
 
 // Common button styles
@@ -50,7 +45,7 @@ export const buttonStyles = {
 };
 
 // Common background effects
-export const backgroundStyles = {
+export const backgroundEffects = {
   grid: `absolute inset-0 opacity-20 [mask-image:radial-gradient(#fff_30%,transparent)]
     bg-[size:60px_60px] bg-[linear-gradient(to_right,theme(colors.red.400)_1px,transparent_1px),
     linear-gradient(to_bottom,theme(colors.red.500)_1px,transparent_1px)]`,
@@ -67,7 +62,7 @@ export const animationVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   },
-  scaleUp: {
+  scaleIn: {
     hidden: { opacity: 0, scale: 0.8 },
     visible: { opacity: 1, scale: 1 },
   },
@@ -75,9 +70,11 @@ export const animationVariants = {
 
 // Common transition settings
 export const transitions = {
-  hover: "transition-all duration-300",
-  scale: "transform transition-all duration-500",
-  color: "transition-colors duration-300",
+  spring: {
+    type: "spring",
+    damping: 20,
+    stiffness: 100,
+  },
 };
 
 // Common spacing
@@ -85,21 +82,22 @@ export const spacing = {
   sectionGap: "space-y-24",
   contentGap: "space-y-6",
   elementGap: "space-y-4",
-  containerPadding: "px-4 sm:px-6 lg:px-8",
-  sectionPadding: "py-16",
-  innerPadding: "p-6 sm:p-8",
 };
 
-// Section specific spacing
-export const sectionSpacing = {
-  hero: "min-h-screen flex items-center justify-center",
-  callToAction: "-mt-32 z-10",
-  footer: "mt-24",
+// Common gradients
+export const gradients = {
+  primary: "bg-gradient-to-r from-red-500 to-red-600",
+  secondary: "bg-gradient-to-r from-red-400 to-red-500",
+  text: "bg-gradient-to-r from-white via-red-200 to-red-300",
 };
 
-// Common effects
-export const effects = {
-  glassmorphism: "backdrop-blur-xl bg-white/10 border border-white/20",
+// Common shadows
+export const shadows = {
+  sm: "shadow-sm",
+  DEFAULT: "shadow",
+  md: "shadow-md",
+  lg: "shadow-lg",
+  xl: "shadow-xl",
   glow: "shadow-[0_0_15px_rgba(248,113,113,0.3)]",
   textGlow: "drop-shadow-[0_2px_4px_rgba(99,102,241,0.5)]",
 };

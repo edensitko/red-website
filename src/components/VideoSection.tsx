@@ -72,7 +72,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc }) => {
 
   return (
     <div 
-      className="relative w-screen h-[500px] my-10  -mx-[calc(50vw-50%)] overflow-hidden bg-transparent"
+      className="relative w-screen h-[500px] py-10  -mx-[calc(50vw-50%)] overflow-hidden bg-transparent"
     >
       {/* Video Background */}
       <video 

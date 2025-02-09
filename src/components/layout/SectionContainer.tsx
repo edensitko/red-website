@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { containerStyles, backgroundStyles } from '../../styles/design-system';
+import { containerStyles, backgroundEffects, gradients, shadows } from '../../styles/design-system';
 
 interface SectionContainerProps {
   children: React.ReactNode;
@@ -22,7 +22,7 @@ const SectionContainer: React.FC<SectionContainerProps> = ({
         
         <div className="absolute inset-0 opacity-20 [mask-image:radial-gradient(#fff_30%,transparent)]">
           
-          <div className={backgroundStyles.grid} />
+          <div className={backgroundEffects.grid} />
           
           
         </div>

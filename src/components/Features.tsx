@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { containerStyles } from '../styles/design-system';
+import { containerStyles, textStyles } from '../styles/design-system';
 
 interface Feature {
   title: string;
@@ -91,28 +91,23 @@ const features: Feature[] = [
   },
 ];
 
-const fadeInVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
 const Features: React.FC = () => {
   return (
-    <section className="relative w-full py-10 overflow-hidden" dir="rtl">
-      <div className="relative w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-2 lg:px-8 backdrop-blur-3xl bg-white/5 rounded-2xl border border-white/10 shadow-xl p-8 transform transition-all duration-500">
-          {/* Enhanced Grid background with animation */}
+    <section className={containerStyles.section} id="services" dir="rtl">
+      <div className={containerStyles.mainContent}>
+        <div className={containerStyles.innerContainer}>
+          {/* Enhanced Grid background */}
           <div className="absolute inset-0 opacity-10 [mask-image:radial-gradient(#fff_40%,transparent)]">
             <div className="absolute inset-0 bg-[size:60px_60px] bg-[linear-gradient(to_right,theme(colors.red.400)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.red.500)_1px,transparent_1px)]
                      animate-[pulse_4s_ease-in-out_infinite]" />
           </div>
 
-          {/* Enhanced Section Header */}
+          {/* Section Header */}
           <div className="text-center mb-16">
             <motion.div
+              viewport={{ once: true }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               className="inline-block px-6 py-2 mb-6 rounded-full 
                        bg-gradient-to-r from-red-500/20 to-purple-500/20 
                        backdrop-blur-md border border-white/10"
@@ -123,37 +118,30 @@ const Features: React.FC = () => {
               </span>
             </motion.div>
             
-            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-black mb-4
-                         bg-gradient-to-r from-white via-red-200 to-red-300 
-                         bg-clip-text text-transparent
-                         tracking-tight drop-shadow-[0_2px_4px_rgba(99,102,241,0.5)]">
+            <h2 className={textStyles.sectionTitle}>
               השירותים שלנו
             </h2>
-            <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            <p className={textStyles.sectionSubtitle}>
               הפתרונות המתקדמים שאנחנו מציעים
-              <span className="block mt-2 bg-gradient-to-r from-red-400 to-red-400 bg-clip-text text-transparent">
+              <span className={textStyles.accentText}>
                 כל מה שהעסק שלך צריך כדי להצליח בעידן הדיגיטלי
               </span>
             </p>
           </div>
 
-          {/* Features Grid with enhanced spacing */}
+          {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="group relative overflow-hidden rounded-2xl backdrop-blur-xl
-                         bg-gradient-to-br from-white/5 to-white/10
-                         border border-white/10 shadow-lg
-                         p-8"
-                variants={fadeInVariants}
-                initial="hidden"
-                whileInView="visible"
+                className={containerStyles.glassCard}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                custom={index}
+                transition={{ delay: index * 0.1 }}
               >
                 {/* Gradient background */}
-                <div className={`absolute inset-0 opacity-20 bg-gradient-to-r ${feature.gradient}`} />
+                <div className={`absolute inset-0 opacity-20 bg-gradient-to-r ${feature.gradient} rounded-xl -z-10`} />
                 
                 <div className="relative z-10">
                   <div className="flex items-center justify-center w-16 h-16 mb-6
@@ -186,21 +174,10 @@ const Features: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-                
-                {/* Decorative elements */}
-                <div className="absolute -bottom-8 -right-8 w-48 h-48 
-                              bg-gradient-to-br from-red-400/10 to-purple-500/10 
-                              rounded-full blur-2xl" />
-                <div className="absolute -top-8 -left-8 w-48 h-48 
-                              bg-gradient-to-br from-purple-500/10 to-red-400/10 
-                              rounded-full blur-2xl" />
               </motion.div>
             ))}
           </div>
         </div>
-
-        {/* Decorative Blurred Circles */}
-       
       </div>
     </section>
   );
